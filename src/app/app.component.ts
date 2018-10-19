@@ -12,8 +12,16 @@ export class AppComponent {
   constructor(private store: StoreService) {
     this.store.reducers = {
       color: (state, action) => {
-        console.log(state, action);
-        return action.payload;
+        switch (action.type) {
+          case 'COLOR_CHANGED': {
+            return action.payload;
+          }
+          // case 'NOTHING_HAPPENED': {
+          //   return state;
+          // }
+        }
+
+        return state;
       }
     };
     this.store.state = {

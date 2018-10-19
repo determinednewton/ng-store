@@ -29,4 +29,10 @@ export class ControllerComponent implements OnInit {
       payload: 'green'
     });
   }
+
+  nothing() {
+    this.store.dispatch({
+      type: 'NOTHING_HAPPENED'
+    });
+  }
 }

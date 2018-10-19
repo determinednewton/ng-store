@@ -17,7 +17,7 @@ export class AppComponent {
       }
     };
     this.store.state = {
-      color: 'red',
+      color: 'green',
     };
   }
 }

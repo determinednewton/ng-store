@@ -13,7 +13,7 @@ export class AppComponent {
     this.store.reducers = {
       color: (state, action) => {
         console.log(state, action);
-        return state;
+        return action.payload;
       }
     };
     this.store.state = {

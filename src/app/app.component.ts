@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StoreService } from './store.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-store';
+
+  constructor(private store: StoreService) {
+    this.store.reducers = {
+      color: (state, action) => {
+        console.log(state, action);
+        return state;
+      }
+    };
+    this.store.state = {
+      color: 'red',
+    };
+  }
 }
